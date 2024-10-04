@@ -37,3 +37,35 @@ Connecting to On-Premise Systems: Does the VPC require a Hybrid connectivity to 
 User Accessibility to VPC Services: How are users going to connect to the services hosted in VPC?
 VPC to VPC Connectivity: Does it need access to services hosted on other VPCs that are part of organizations network? It is always best to document these requirements.
 Note: Organizations typically keep a questionnaire to understand the VPC requirements from network, security, and compliance perspectives.
+
+VPC Network Design
+Ideally in most organizations the VPC is created and managed by a dedicated Network team. However, devops engineers working with the application team need to come up with the VPC requirements that can host all the required applications.
+
+How to choose CIDR for VPC?
+The CIDR block for a VPC depends on the number of servers we plan to deploy in a VPC. This includes both self-hosted and AWS-managed services
+
+We not only consider the immediate requirements but also the future expansion. We might start with a total of 15 servers now and in the future, it might grow to 1000+ servers.
+
+So for our requirement, 10.0.0.0/20 CIDR is more than enough. Which would give you 4,096 usable IP addresses. We also need to factor on subnets in different availability zones.
+
+However, for the project, we will choose the 10.0.0.0/16 CIDR range for our VPC. This will allow you up to 65,536 private IP addresses and it will make the subnetting easier.
+
+Note: In actual project environments, VPC ranges are decided only based the requirements. Typically, the Application/DevOps/Network team will have a discussion and decide on the required ranges so that over/under allocation doesn’t happen
+
+Avoiding IP Address Conflicts
+Let’s take a scenario where 10.0.0.0/16 range is already allocated to a project in an on-prem environment. Even if there is no hybrid cloud connectivity to on-prem, we should not re-use 10.0.0.0/16 for VPC. Because in the future, if hybrid connectivity is set up, it could lead to IP conflicts.
+
+Network teams in organizations ensure there are no IP range conflicts by keeping track of private IP addresses reserved for projects. This way, there won’t be any IP conflicts. Typically they use IP Address Management (IPAM) tools to track IP address allocation. These tools provide a centralized view of the IP address space used within the organization.
+
+The following image shows an example dashboard of an open-source IPAM tool called Netbox.
+
+Note: If you use AWS Private NAT gateway you can avoid IP conflicts even if two VPCs have the same CIDR ranges.
+
+Subnet Design
+Based on our application architecture and components we would need the following public and private subnets.
+
+Public Subnets (Public): To deploy Load balancers for the Java app autoscaling group
+Application Subnets (Private): To deploy the Java app autoscaling group
+Database Subnets (Private): To deploy the RDS MYSQL instance
+Management Subnets (Private): To deploy CI/CD tools and platform tools.
+Platform Tools Subnets (Private): To deploy and manage all the platform tools.
