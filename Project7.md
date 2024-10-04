@@ -23,3 +23,17 @@ VPN Gateway: Enables you to establish a secure connection between your VPC and y
 VPC Endpoints: Allow you to privately connect your VPC to supported AWS services and VPC endpoint services powered by AWS PrivateLink without requiring an Internet Gateway, NAT device, VPN connection, or AWS Direct Connect connection.
 
 AWS Direct Connect: Provides a dedicated network connection from your premises to AWS, enhancing security and reducing network costs.
+
+Understand VPC Requirements
+As a DevOps engineer, you need to understand the VPC requirements by asking questions to the relevant teams.
+
+When working in real projects, following are some of the important questions that will help you understand the VPC requirements better.
+
+Identifying Your Hosting Needs: What do you want to host?
+Meeting Compliance Standards: What are its compliance requirements?
+Handling Sensitive Information: Does it have applications dealing with PCI/PII data?
+Public vs. Private Accessibility: Are the applications internet-facing?
+Connecting to On-Premise Systems: Does the VPC require a Hybrid connectivity to an on-premise environment? If yes, is it DNS or IP-based connectivity?
+User Accessibility to VPC Services: How are users going to connect to the services hosted in VPC?
+VPC to VPC Connectivity: Does it need access to services hosted on other VPCs that are part of organizations network? It is always best to document these requirements.
+Note: Organizations typically keep a questionnaire to understand the VPC requirements from network, security, and compliance perspectives.
