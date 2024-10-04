@@ -69,3 +69,46 @@ Application Subnets (Private): To deploy the Java app autoscaling group
 Database Subnets (Private): To deploy the RDS MYSQL instance
 Management Subnets (Private): To deploy CI/CD tools and platform tools.
 Platform Tools Subnets (Private): To deploy and manage all the platform tools.
+
+Private Subnet Access
+Since we have private subnets, DevOps engineers & developers need access to the servers on private subnets.
+
+Most organizations set up a VPN connection to the AWS cloud to access the servers deployed in VPC.
+
+Following are the native-options for connecting instances in the AWS VPC private subnets.
+
+EC2 Instance Connect: Helps you to connect to AWS instances in a private subnet securely without needing a Public IP. It is an identity-aware proxy that uses IAM permissions to connect to the instance. One instance can be used as a JUMP server to connect to other instances in the VPC (cheapest solution)
+AWS Client VPN (client-to-site VPN): Allows remote workers to access AWS resources securely; Ideal for a distributed team that needs to use AWS services. (Gets expensive with more users)
+Site-to-Site VPN: Connects the on-premises network to the AWS Virtual Private Cloud (VPC); This is the ideal solution for organizations that want a secure, private connection between their on-prem network and AWS. Requires an on-premises VPN device. Setup can be expensive.
+AWS Direct Connect: Creates a direct, private link between the on-prem and AWS network; It is ideal for businesses that need a fast, reliable connection to AWS without using the public internet. It comes with a higher upfront costs. Note: The type of access depends on the project requirements, compliance requirements, and budget.
+Internet Access
+Both Private and Public subnet servers need internet access.
+
+If you add an internet gateway, your subnet becomes a public subnet. Others by default become private.
+
+Therefore, we need add a internet gateway to the public subnet for direct internet inbound access for instances in the public subnet.
+
+Other subnets need to be in private. For the private subnets to access the internet (outbound), you need to attach a NAT gateway. This is primarily required to access thrid party services or package repositories available in internet.
+
+Egress Filtering
+Most organizations use a forward proxy for all outbound internet requests from Private & public subnets. Meaning, that even though we have a NAT gateway, there would be a firewall service to filter the outbound traffic.
+
+AWS offers a service called AWS Network Firewall, which can be integrated with a NAT gateway for egress traffic filtering. You can restrict or filter HTTP and HTTPS traffic using domain names.
+
+Some organizations use self-managed Squid Proxies for DNS filtering. Big organizations use enterprise solutions like Checkpoint for ingress & egress filtering.
+
+All outgoing requests first hit the proxy, get filtered, and then go out through the NAT gateway.
+
+VPC Documentation
+One of the key things in VPC design is documentation. All VPC configurations should be documented to ensure the VPC stays compliant over time.
+
+You can choose a documentation method of your choice. It could be an Excel sheet, confluence documentation, or GitHub Markdown documentation.
+
+Now that we have a good understanding of the VPC requirements for our project, let’s document the required subnets and CIDRs.
+
+VPC Details Following are the VPC details, region, and availability zones we will be using for our project.
+
+CIDR Block: 10.0.0.0/16
+Region: us-west-2
+Availability Zones: us-west-2a, us-west-2b, us-west-2c
+Subnets: 15 Subnets (One per availability Zone)
