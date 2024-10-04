@@ -29,7 +29,7 @@ As a DevOps engineer, you need to understand the VPC requirements by asking ques
 
 When working in real projects, following are some of the important questions that will help you understand the VPC requirements better.
 
-Identifying Your Hosting Needs: What do you want to host?
+## Identifying Your Hosting Needs: What do you want to host?
 Meeting Compliance Standards: What are its compliance requirements?
 Handling Sensitive Information: Does it have applications dealing with PCI/PII data?
 Public vs. Private Accessibility: Are the applications internet-facing?
@@ -38,7 +38,7 @@ User Accessibility to VPC Services: How are users going to connect to the servic
 VPC to VPC Connectivity: Does it need access to services hosted on other VPCs that are part of organizations network? It is always best to document these requirements.
 Note: Organizations typically keep a questionnaire to understand the VPC requirements from network, security, and compliance perspectives.
 
-VPC Network Design
+## VPC Network Design
 Ideally in most organizations the VPC is created and managed by a dedicated Network team. However, devops engineers working with the application team need to come up with the VPC requirements that can host all the required applications.
 
 How to choose CIDR for VPC?
@@ -52,7 +52,7 @@ However, for the project, we will choose the 10.0.0.0/16 CIDR range for our VPC.
 
 Note: In actual project environments, VPC ranges are decided only based the requirements. Typically, the Application/DevOps/Network team will have a discussion and decide on the required ranges so that over/under allocation doesn’t happen
 
-Avoiding IP Address Conflicts
+## Avoiding IP Address Conflicts
 Let’s take a scenario where 10.0.0.0/16 range is already allocated to a project in an on-prem environment. Even if there is no hybrid cloud connectivity to on-prem, we should not re-use 10.0.0.0/16 for VPC. Because in the future, if hybrid connectivity is set up, it could lead to IP conflicts.
 
 Network teams in organizations ensure there are no IP range conflicts by keeping track of private IP addresses reserved for projects. This way, there won’t be any IP conflicts. Typically they use IP Address Management (IPAM) tools to track IP address allocation. These tools provide a centralized view of the IP address space used within the organization.
@@ -61,16 +61,16 @@ The following image shows an example dashboard of an open-source IPAM tool calle
 
 Note: If you use AWS Private NAT gateway you can avoid IP conflicts even if two VPCs have the same CIDR ranges.
 
-Subnet Design
+## Subnet Design
 Based on our application architecture and components we would need the following public and private subnets.
 
-Public Subnets (Public): To deploy Load balancers for the Java app autoscaling group
+## Public Subnets (Public): To deploy Load balancers for the Java app autoscaling group
 Application Subnets (Private): To deploy the Java app autoscaling group
 Database Subnets (Private): To deploy the RDS MYSQL instance
 Management Subnets (Private): To deploy CI/CD tools and platform tools.
 Platform Tools Subnets (Private): To deploy and manage all the platform tools.
 
-Private Subnet Access
+## Private Subnet Access
 Since we have private subnets, DevOps engineers & developers need access to the servers on private subnets.
 
 Most organizations set up a VPN connection to the AWS cloud to access the servers deployed in VPC.
@@ -81,7 +81,7 @@ EC2 Instance Connect: Helps you to connect to AWS instances in a private subnet 
 AWS Client VPN (client-to-site VPN): Allows remote workers to access AWS resources securely; Ideal for a distributed team that needs to use AWS services. (Gets expensive with more users)
 Site-to-Site VPN: Connects the on-premises network to the AWS Virtual Private Cloud (VPC); This is the ideal solution for organizations that want a secure, private connection between their on-prem network and AWS. Requires an on-premises VPN device. Setup can be expensive.
 AWS Direct Connect: Creates a direct, private link between the on-prem and AWS network; It is ideal for businesses that need a fast, reliable connection to AWS without using the public internet. It comes with a higher upfront costs. Note: The type of access depends on the project requirements, compliance requirements, and budget.
-Internet Access
+## Internet Access
 Both Private and Public subnet servers need internet access.
 
 If you add an internet gateway, your subnet becomes a public subnet. Others by default become private.
@@ -90,7 +90,7 @@ Therefore, we need add a internet gateway to the public subnet for direct intern
 
 Other subnets need to be in private. For the private subnets to access the internet (outbound), you need to attach a NAT gateway. This is primarily required to access thrid party services or package repositories available in internet.
 
-Egress Filtering
+## Egress Filtering
 Most organizations use a forward proxy for all outbound internet requests from Private & public subnets. Meaning, that even though we have a NAT gateway, there would be a firewall service to filter the outbound traffic.
 
 AWS offers a service called AWS Network Firewall, which can be integrated with a NAT gateway for egress traffic filtering. You can restrict or filter HTTP and HTTPS traffic using domain names.
@@ -99,7 +99,7 @@ Some organizations use self-managed Squid Proxies for DNS filtering. Big organiz
 
 All outgoing requests first hit the proxy, get filtered, and then go out through the NAT gateway.
 
-VPC Documentation
+## VPC Documentation
 One of the key things in VPC design is documentation. All VPC configurations should be documented to ensure the VPC stays compliant over time.
 
 You can choose a documentation method of your choice. It could be an Excel sheet, confluence documentation, or GitHub Markdown documentation.
