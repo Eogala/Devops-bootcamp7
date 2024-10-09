@@ -158,3 +158,12 @@ Prod-Web-Public-2a	us-west-2a	        10.0.0.0/28	    Public
 Prod-Web-Public-2b	us-west-2b	        10.0.0.16/28	Public
 Prod-Web-Public-2c	us-west-2c	        10.0.0.32/28	Public
 
+| Subnet Name          | Availability Zone | CIDR Block  | Type   |
+|----------------------|-------------------|-------------|--------|
+| Prod-Web-Public-2a   | us-west-2a        | 10.0.0.0/28  | Public |
+| Prod-Web-Public-2b   | us-west-2b        | 10.0.0.16/28 | Public |
+| Prod-Web-Public-2c   | us-west-2c        | 10.0.0.32/28 | Public |
+
+
+
+## Using the above table data, we will create the public subnet
