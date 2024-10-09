@@ -153,10 +153,7 @@ Prod-Web-Public-2a
 Let's create some subnet
 
 * Public Subnets
-Subnet Name	        Availability Zone	CIDR Block	    Type
-Prod-Web-Public-2a	us-west-2a	        10.0.0.0/28	    Public
-Prod-Web-Public-2b	us-west-2b	        10.0.0.16/28	Public
-Prod-Web-Public-2c	us-west-2c	        10.0.0.32/28	Public
+
 
 | Subnet Name          | Availability Zone | CIDR Block  | Type   |
 |----------------------|-------------------|-------------|--------|
@@ -167,3 +164,35 @@ Prod-Web-Public-2c	us-west-2c	        10.0.0.32/28	Public
 
 
 ## Using the above table data, we will create the public subnet
+
+ Application Subnets
+
+| Subnet Name          | Availability Zone | CIDR Block  | Type    |
+|----------------------|-------------------|-------------|---------|
+| Prod-App-Private-2a  | us-west-2a        | 10.0.0.48/28 | Private |
+| Prod-App-Private-2b  | us-west-2b        | 10.0.0.64/28 | Private |
+| Prod-App-Private-2c  | us-west-2c        | 10.0.0.80/28 | Private |
+
+- Database Subnets
+
+| Subnet Name         | Availability Zone | CIDR Block  | Type    |
+|---------------------|-------------------|-------------|---------|
+| Prod-DB-Private-2a  | us-west-2a        | 10.0.0.96/28 | Private |
+| Prod-DB-Private-2b  | us-west-2b        | 10.0.0.112/28 | Private |
+| Prod-DB-Private-2c  | us-west-2c        | 10.0.0.128/28 | Private |
+
+- Management Subnets
+
+| Subnet Name           | Availability Zone | CIDR Block   | Type    |
+|-----------------------|-------------------|--------------|---------|
+| Prod-Mgmt-Private-2a  | us-west-2a        | 10.0.0.144/28 | Private |
+| Prod-Mgmt-Private-2b  | us-west-2b        | 10.0.0.160/28 | Private |
+| Prod-Mgmt-Private-2c  | us-west-2c        | 10.0.0.176/28 | Private |
+
+- Platform Subnets
+
+| Subnet Name              | Availability Zone | CIDR Block   | Type    |
+|--------------------------|-------------------|--------------|---------|
+| Prod-Platform-Private-2a | us-west-2a        | 10.0.0.192/28 | Private |
+| Prod-Platform-Private-2b | us-west-2b        | 10.0.0.208/28 | Private |
+| Prod-Platform-Private-2c | us-west-2c        | 10.0.0.224/28 | Private |
