@@ -182,6 +182,10 @@ Let's create some subnet
 
 ![pic](img/Screenshot%20(527).png)
 
+![pic](img/Screenshot%20(529).png)
+
+![pic](img/Screenshot%20(533).png)
+
 
 
 ## Using the above table data, we will create the public subnet
