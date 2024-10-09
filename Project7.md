@@ -112,3 +112,32 @@ CIDR Block: 10.0.0.0/16
 Region: us-west-2
 Availability Zones: us-west-2a, us-west-2b, us-west-2c
 Subnets: 15 Subnets (One per availability Zone)
+
+# STEP 1
+Let's create a VPC for our project and assign attach an internet gateway to it
+
+* Login to your AWS management console and search VPC
+
+![pic](img/Screenshot%20(504).png)
+
+![pic](img/Screenshot%20(506).png)
+
+![pic](img/Screenshot%20(507).png)
+
+![pic](img/Screenshot%20(508).png)
+
+![pic](img/Screenshot%20(509).png)
+
+![pic](img/Screenshot%20(510).png)
+
+![pic](img/Screenshot%20(511).png)
+
+![pic](img/Screenshot%20(512).png)
+
+![pic](img/Screenshot%20(513).png)
+
+
+![pic](img/Screenshot%20(514).png)
+
+![pic](img/Screenshot%20(516).png)
+
