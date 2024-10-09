@@ -165,6 +165,25 @@ Let's create some subnet
 
 
 
+![pic](img/Screenshot%20(521).png)
+
+
+![pic](img/Screenshot%20(522).png)
+
+
+![pic](img/Screenshot%20(523).png)
+
+
+![pic](img/Screenshot%20(524).png)
+
+
+![pic](img/Screenshot%20(526).png)
+
+
+![pic](img/Screenshot%20(527).png)
+
+
+
 ## Using the above table data, we will create the public subnet
 
  Application Subnets
@@ -230,7 +249,7 @@ Using the table above you will create 5 route tables
 
 ![pic](img)
 
-
+![pic](img)
 
 
 
