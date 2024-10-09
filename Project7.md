@@ -291,3 +291,12 @@ The following are the tables for inbound and outbound rules for the DB NACL.
  The above table serves as a guide to how your implemetation would look like:
  Here is a step by step on a Network ACLS:
  
+
+
+
+
+ # Clean up 
+
+- delete elastc ip
+- delete the Nat gateway 
+- delete all route tables and subnets created
