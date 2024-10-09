@@ -343,20 +343,26 @@ The following are the tables for inbound and outbound rules for the DB NACL.
 
  The above table serves as a guide to how your implemetation would look like:
  Here is a step by step on a Network ACLS:
- ![pic](img)
+ ![pic](img/Screenshot%20(562).png)
 
-![pic](img)
+![pic](img/Screenshot%20(563).png)
 
-![pic](img)
+![pic](img/Screenshot%20(564).png)
 
-![pic](img)
-
-
-![pic](img)
-
-![pic](img)
+![pic](img/Screenshot%20(565).png)
 
 
+![pic](img/Screenshot%20(566).png)
+
+![pic](img/Screenshot%20(567).png)
+
+
+![pic](img/Screenshot%20(568).png)
+
+
+![pic](img/Screenshot%20(569).png)
+
+![pic](img/Screenshot%20(570).png)
 
 
 
