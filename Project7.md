@@ -268,7 +268,7 @@ Let's assocaite our public subnet to our route table
 
 ### When you completly create all 5 it would look like this:
 
-![pic](img)
+![pic](img/Screenshot%20(545).png)
 
 
 ## NAT Gateway
@@ -277,24 +277,27 @@ A NAT gateway is a Network Address Translation (NAT) service. You can use a NAT 
 
 We need to create a NAT gateway and attach it to all our route tables created earlier
 
-![pic](img)
+![pic](img/Screenshot%20(546).png)
 
-![pic](img)
+![pic](img/Screenshot%20(547).png)
 
 - select a subnet and allocate an elastic ip
 
 
 
 ![pic](img)
-![pic](img)
-![pic](img)
-![pic](img)
-![pic](img)
-![pic](img)
+![pic](img/Screenshot%20(549).png)
+![pic](img/Screenshot%20(550).png)
+![pic](img/Screenshot%20(551).png)
+![pic](img/Screenshot%20(522).png)
+![pic](img/Screenshot%20(554).png)
+
+![pic](img/Screenshot%20(555).png)
+
+![pic](img/Screenshot%20(556).png)
 
 ![pic](img)
 
-![pic](img)
 
 
 # Network ACLs
