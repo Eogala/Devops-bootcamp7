@@ -296,7 +296,19 @@ We need to create a NAT gateway and attach it to all our route tables created ea
 
 ![pic](img/Screenshot%20(556).png)
 
-![pic](img)
+![pic](img/Screenshot%20(573).png)
+
+# AWS VPC Topology
+The following diagram shows the high-level VPC topology for our design.
+
+Note: Both the internet Gateway (IGW) and NAT gateway(NAT-GW) gets deployed in the public subnet.
+
+To check our VPC topology:
+
+![pic](img/Screenshot%20(558).png)
+
+![pic](img/Screenshot%20(559).png)
+![pic](img/Screenshot%20(560).png)
 
 
 
