@@ -141,3 +141,20 @@ Let's create a VPC for our project and assign attach an internet gateway to it
 
 ![pic](img/Screenshot%20(516).png)
 
+We will follow the following subnet naming schemes
+
+~~~
+EnvName-AppType-RouteType-AZ
+~~~
+For example,
+~~~
+Prod-Web-Public-2a
+~~~
+Let's create some subnet
+
+* Public Subnets
+Subnet Name	        Availability Zone	CIDR Block	    Type
+Prod-Web-Public-2a	us-west-2a	        10.0.0.0/28	    Public
+Prod-Web-Public-2b	us-west-2b	        10.0.0.16/28	Public
+Prod-Web-Public-2c	us-west-2c	        10.0.0.32/28	Public
+
