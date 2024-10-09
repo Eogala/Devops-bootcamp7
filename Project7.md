@@ -224,7 +224,9 @@ Let's create some subnet
 
 
 ##  This is how it should look like after you create all the subnets
-![alt text](<images/All subnet created.png>)
+![pic](img/Screenshot%20(535).png)
+
+
 
 # Route Table Design
 For each subnet group, we will create a custom route table and assign rules required for the specific subnets.
@@ -243,17 +245,22 @@ For example, all three public subnets will share the same public-subnet route ta
 
 Using the table above you will create 5 route tables
 
-![pic](img)
+* Let's create public route table
 
-![pic](img)
+![pic](img/Screenshot%20(545).png)
 
-![pic](img)
+* Give it a name and select the VPC you created earlier
+![pic](img/Screenshot%20(536).png)
 
-![pic](img)
+Let's assocaite our public subnet to our route table
 
-![pic](img)
+![pic](img/Screenshot%20(537).png)
 
-![pic](img)
+![pic](img/Screenshot%20(538).png)
+
+* We add 3 public subnets (prod-web-public a,b,c)
+![pic](img/Screenshot%20(541).png)
+
 
 
 
@@ -270,7 +277,9 @@ A NAT gateway is a Network Address Translation (NAT) service. You can use a NAT 
 
 We need to create a NAT gateway and attach it to all our route tables created earlier
 
+![pic](img)
 
+![pic](img)
 
 - select a subnet and allocate an elastic ip
 
@@ -281,6 +290,10 @@ We need to create a NAT gateway and attach it to all our route tables created ea
 ![pic](img)
 ![pic](img)
 ![pic](img)
+![pic](img)
+
+![pic](img)
+
 ![pic](img)
 
 
@@ -315,7 +328,19 @@ The following are the tables for inbound and outbound rules for the DB NACL.
 
  The above table serves as a guide to how your implemetation would look like:
  Here is a step by step on a Network ACLS:
- 
+ ![pic](img)
+
+![pic](img)
+
+![pic](img)
+
+![pic](img)
+
+
+![pic](img)
+
+![pic](img)
+
 
 
 
