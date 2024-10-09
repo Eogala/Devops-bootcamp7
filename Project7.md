@@ -196,3 +196,24 @@ Let's create some subnet
 | Prod-Platform-Private-2a | us-west-2a        | 10.0.0.192/28 | Private |
 | Prod-Platform-Private-2b | us-west-2b        | 10.0.0.208/28 | Private |
 | Prod-Platform-Private-2c | us-west-2c        | 10.0.0.224/28 | Private |
+
+
+##  This is how it should look like after you create all the subnets
+![alt text](<images/All subnet created.png>)
+
+# Route Table Design
+For each subnet group, we will create a custom route table and assign rules required for the specific subnets.
+
+For example, all three public subnets will share the same public-subnet route table.
+
+
+| Subnet      | Destination CIDR | Target           |
+|-------------|------------------|------------------|
+| Public      | 0.0.0.0/0        | Internet Gateway |
+| App         | 0.0.0.0/0        | Nat Gateway      |
+| DB          | 0.0.0.0/0        | Nat Gateway      |
+| Management  | 0.0.0.0/0        | Nat Gateway      |
+| Platform  | 0.0.0.0/0        | Nat Gateway      |
+
+
+Using the table above you will create 5 route tables
