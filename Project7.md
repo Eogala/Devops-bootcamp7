@@ -113,6 +113,8 @@ Region: us-west-2
 Availability Zones: us-west-2a, us-west-2b, us-west-2c
 Subnets: 15 Subnets (One per availability Zone)
 
+![alt text](<images/check toplogy2.png>)
+
 # STEP 1
 Let's create a VPC for our project and assign attach an internet gateway to it
 
